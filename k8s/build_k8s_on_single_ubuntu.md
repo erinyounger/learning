@@ -1,9 +1,9 @@
-## 在Ubuntu上建立单机版K8s
+## 在Ubuntu上建立单机版K8s 
 
-###　环境准备
+###　环境准备 
 １．　翻墙并设置代理(过程略过)　
-export http_proxy=http://127.0.0.1:19180
-export https_proxy=http://127.0.0.1:19180
+export http_proxy=http://127.0.0.1:19180 
+export https_proxy=http://127.0.0.1:19180 
 export no_proxy=192.168.1.118 # 你电脑的ip地址　
 
 ### 安装
@@ -37,4 +37,10 @@ Environment="HTTPS_PROXY=http://127.0.0.1:19180/"
 ```
 sudo kubeadm init --pod-network-cidr=172.16.0.0/16
 sudo journalctl -xeu kubelet
+成功的话会有如下答应：
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 192.168.1.10:6443 --token y9rhq3.lubhk5ji3rniru43 \
+    --discovery-token-ca-cert-hash sha256:43e5a410e7048d7f7ebf4816d47c985f40f799aae0740003e124adca3c4b6077 
 ```
+
