@@ -2,8 +2,8 @@
 
 ###　环境准备
 １．　翻墙并设置代理(过程略过)　
-export http_proxy=http://127.0.0.1:19181
-export https_proxy=http://127.0.0.1:19181
+export http_proxy=http://127.0.0.1:19180
+export https_proxy=http://127.0.0.1:19180
 export no_proxy=192.168.1.118 # 你电脑的ip地址　
 
 ### 安装
@@ -30,6 +30,11 @@ sudo apt-get install -y kubelet kubeadm kubectl kubernetes-cni
 sudo vim /etc/systemd/system/multi-user.target.wants/docker.service
 增加
 [Service]
-Environment="HTTP_PROXY=http://127.0.0.1:19181/"
-Environment="HTTPS_PROXY=http://127.0.0.1:19181/"
+Environment="HTTP_PROXY=http://127.0.0.1:19180/"
+Environment="HTTPS_PROXY=http://127.0.0.1:19180/"
+```
+４．　初始化kubelet　
+```
+sudo kubeadm init --pod-network-cidr=172.16.0.0/16
+sudo journalctl -xeu kubelet
 ```
