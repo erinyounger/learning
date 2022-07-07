@@ -8,7 +8,7 @@ export no_proxy=192.168.1.118 # 你电脑的ip地址　
 
 ### 安装
 
-１．　安装Ｄｏｃｋｅｒ　
+１．　安装Docker
 - step 1: 安装必要的一些系统工具　
 sudo apt-get update
 sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common　
